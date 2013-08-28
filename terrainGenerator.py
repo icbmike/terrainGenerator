@@ -3,12 +3,13 @@ from PIL import Image
 
 class TerrainGenerator(object):
 	
-	def __init__(self, width, height, growth_threshold, decay, num_seeds):
+	def __init__(self, width, height, growth_threshold, decay, num_seeds, filename):
 		self.width = width
 		self.height = height
 		self.growth_threshold = growth_threshold
 		self.decay = decay
 		self.num_seeds = num_seeds
+		self.filename = filename
 
 	def generateTerrain(self):
 
@@ -24,7 +25,7 @@ class TerrainGenerator(object):
 			self.__grow_seed(seed % self.width, seed / self.width, self.growth_threshold)
 
 		#Turn the map into a png
-		image.save('map.png')
+		image.save(self.filename)
 
 	def __grow_seed(self, seed_x, seed_y, growth_threshold):
 	
