@@ -1,9 +1,9 @@
-terrainGenerator
+TerrainGenerator
 ================
 
-terrain generation experiment using seed growing
+A terrain generation experiment using seed growing
 
-run using this command
+Run using this command
 	
 	python runner.py
 
@@ -14,5 +14,5 @@ On OSX I use this command
 	
 	python runner.py && open map.png
 
-Sample generated map
+Sample generated map:
 ![sample generated map](map.png)
