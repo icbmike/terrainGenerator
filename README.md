@@ -36,5 +36,5 @@ On OSX I use this command
 
 Sample generated maps:
 
-![sample generated map](map.png)
+![sample generated map](continents.png)
 ![sample generated map](small_islands.png)
