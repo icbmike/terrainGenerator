@@ -13,7 +13,6 @@ def main():
 
 	arguments = vars(parser.parse_args())
 	
-
 	#width, height, growth threshold, decay rate, number of seeds
 	tg = TerrainGenerator(arguments['width'], arguments['height'], arguments['growth_threshold'], arguments['decay'], arguments['num_seeds'], arguments['filename'])
 	tg.generateTerrain()
