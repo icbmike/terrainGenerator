@@ -1,4 +1,4 @@
-import sys, random
+import random
 from PIL import Image
 
 class TerrainGenerator(object):
@@ -46,10 +46,3 @@ class TerrainGenerator(object):
 
 			if seed_y != self.height - 1:
 				self.__grow_seed(seed_x, seed_y + 1, growth_threshold - self.decay)
-
-def main():
-	tg = TerrainGenerator(700, 500, 0.9, 0.005, 20)
-	tg.generateTerrain()
-	
-if __name__ == '__main__':
-	main()
