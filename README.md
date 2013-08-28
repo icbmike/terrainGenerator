@@ -21,7 +21,7 @@ These are the optional command line arguments
 	                        The width of the generated image - default is 500
 	  -height, -he HEIGHT
 	                        The height of the generated image - default is 500
-	  -growth-threshold -g GROWTH_THRESHOLD
+	  -growth-threshold, -g GROWTH_THRESHOLD
 	                        The growth threshold above which a seed stops growing - default is 0.9
 	  -decay-rate, -d DECAY
 	                        The rate at which the growth threshold decreases - default is 0.01
