@@ -36,5 +36,3 @@ nosetests.xml
 
 #virtualenv
 venv/
-
-map.png

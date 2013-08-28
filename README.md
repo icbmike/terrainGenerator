@@ -13,3 +13,6 @@ modify the arguments to the TerrainGenerator constructor in runner.py
 On OSX I use this command
 
 python runner.py && open map.png
+
+
+![sample generated map](map.png)
