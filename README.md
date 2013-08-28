@@ -14,5 +14,6 @@ On OSX I use this command
 	
 	python runner.py && open map.png
 
-Sample generated map:
+Sample generated maps:
 ![sample generated map](map.png)
+![sample generated map](small_islands.png)
