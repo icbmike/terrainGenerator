@@ -9,20 +9,20 @@ Run using this command
 
 These are the optional command line arguments
 
-usage: runner.py [-h] [-width WIDTH] [-height HEIGHT]
-                 [-growth-threshold GROWTH_THRESHOLD] [-decay-rate DECAY]
-                 [-number-of-seeds NUM_SEEDS] [-filename FILENAME]
+	usage: runner.py [-h] [-width WIDTH] [-height HEIGHT]
+	                 [-growth-threshold GROWTH_THRESHOLD] [-decay-rate DECAY]
+	                 [-number-of-seeds NUM_SEEDS] [-filename FILENAME]
 
-A small program to generate simple terrains using seed growing
+	A small program to generate simple terrains using seed growing
 
-optional arguments:
-  -h, --help            show this help message and exit
-  -width WIDTH, -w WIDTH
-  -height HEIGHT, -he HEIGHT
-  -growth-threshold GROWTH_THRESHOLD, -g GROWTH_THRESHOLD
-  -decay-rate DECAY, -d DECAY
-  -number-of-seeds NUM_SEEDS, -n NUM_SEEDS
-  -filename FILENAME, -f FILENAME
+	optional arguments:
+	  -h, --help            show this help message and exit
+	  -width WIDTH, -w WIDTH
+	  -height HEIGHT, -he HEIGHT
+	  -growth-threshold GROWTH_THRESHOLD, -g GROWTH_THRESHOLD
+	  -decay-rate DECAY, -d DECAY
+	  -number-of-seeds NUM_SEEDS, -n NUM_SEEDS
+	  -filename FILENAME, -f FILENAME
   
 On OSX I use this command
 	
