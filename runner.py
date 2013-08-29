@@ -4,7 +4,6 @@ import random
 import string
 from terrainGenerator import TerrainGenerator
 
-
 def main():
     random_name = ''.join(random.choice(string.lowercase)
                 for i in range(8)) + '.png'
@@ -25,13 +24,19 @@ def main():
             default is 10""")
     parser.add_argument("-filename", "-f", default=random_name, dest="filename",
             help="The output filename - default is random")
+    parser.add_argument("-recursion", "-r", action='store_true', dest='show_recursion',
+            help="Should the recursion depth be shown? - default is true")
 
     args = parser.parse_args()
 
     #width, height, growth threshold, decay rate, number of seeds
     tg = TerrainGenerator(args.width, args.height, args.growth_threshold,
             args.decay, args.num_seeds, args.filename)
+    
     tg.generate_terrain()
+
+    if args.show_recursion:
+        print tg.get_recursion_depth()
 
 if __name__ == '__main__':
     main()

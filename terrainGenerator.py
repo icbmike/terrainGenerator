@@ -1,7 +1,6 @@
 import random
 from PIL import Image
 
-
 class TerrainGenerator(object):
 
     def __init__(self, width, height, growth_threshold, decay, num_seeds, filename):
@@ -12,6 +11,9 @@ class TerrainGenerator(object):
         self.num_seeds = num_seeds
         self.filename = filename
         self.recursion_counter = 0
+
+    def get_recursion_depth(self):
+        return self.recursion_counter
 
     def generate_terrain(self):
 
@@ -30,7 +32,6 @@ class TerrainGenerator(object):
         #Turn the map into a png
         image.save(self.filename)
 
-        print self.recursion_counter
 
     def _grow_seed(self, seed_x, seed_y, growth_threshold):
         self.recursion_counter += 1
