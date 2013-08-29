@@ -2,11 +2,11 @@
 import argparse
 import random
 import string
+from datetime import datetime
 from terrainGenerator import TerrainGenerator
 
 def main():
-    random_name = ''.join(random.choice(string.lowercase)
-                for i in range(8)) + '.png'
+    timestamp_name = str(datetime.today()) + ".png"
     parser = argparse.ArgumentParser(description="""A small program to generate
                     simple terrains using seed growing""")
     parser.add_argument("-width", "-w", default=500, type=int, dest="width",
@@ -22,9 +22,9 @@ def main():
     parser.add_argument("-number-of-seeds", "-n", default=10, type=int,
             dest="num_seeds", help="""The number of seeds to grow land from -
             default is 10""")
-    parser.add_argument("-filename", "-f", default=random_name, dest="filename",
+    parser.add_argument("-filename", "-f", default=timestamp_name, dest="filename",
             help="The output filename - default is random")
-    parser.add_argument("-recursion", "-r", action='store_true', dest='show_recursion',
+    parser.add_argument("-verbose", "-v", action='store_true', dest='verbose',
             help="Should the recursion depth be shown? - default is true")
 
     args = parser.parse_args()
@@ -35,8 +35,11 @@ def main():
     
     tg.generate_terrain()
 
-    if args.show_recursion:
-        print tg.get_recursion_depth()
+    if args.verbose:
+        print "Recursion depth: " + str(tg.get_recursion_depth())
+        print "Output filename: " + args.filename
+
+
 
 if __name__ == '__main__':
     main()
