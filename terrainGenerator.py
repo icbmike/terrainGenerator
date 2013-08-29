@@ -10,6 +10,7 @@ class TerrainGenerator(object):
 		self.decay = decay
 		self.num_seeds = num_seeds
 		self.filename = filename
+		self.recursion_counter = 0
 
 	def generateTerrain(self):
 
@@ -26,9 +27,10 @@ class TerrainGenerator(object):
 
 		#Turn the map into a png
 		image.save(self.filename)
+		print self.recursion_counter
 
 	def __grow_seed(self, seed_x, seed_y, growth_threshold):
-	
+		self.recursion_counter += 1
 		if random.random() > growth_threshold: 
 			self.map[seed_x, seed_y] = (23, 115, 27)
 			return
