@@ -11,14 +11,10 @@ class TerrainImageSaver(object):
 
         map = image.load()
 
-        for point in terrain.data:
+        for point in terrain.get_data():
             map[point.x, point.y] = point.color
 
         image.save(self.filename)
 
-
-    #A handler method, frame is expected to be a Terrain object
-    def frame_generated(self, frame):
-        pass
 
         

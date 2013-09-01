@@ -63,14 +63,21 @@ class TerrainGenerator(object):
 class Terrain(object):
     
     def __init__(self):
-        self.data = []
+        self.data = {}
 
     def __getitem__(self, index):
-        pass
+        return self.data[index]
 
     def __setitem__(self, index, value):
-        pass
+        self.data[index] = value
 
-class Point
-            
-        
+    def get_data(self):
+        for key in self.data.keys():
+            yield data[key];
+
+class Point(object):
+    def __init__(self, x, y, colour):
+        self.x = x
+        self.y = y
+        self.colour = colour
+    
