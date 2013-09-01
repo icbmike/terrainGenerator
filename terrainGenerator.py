@@ -17,20 +17,14 @@ class TerrainGenerator(object):
 
     def generate_terrain(self):
 
-        #Construct the map
-        image = Image.new("RGB", (self.width, self.height), (0, 128, 255))
-
         #Get access to the pixel data
-        self.map = image.load()
+        self.map = Terrain()
 
         for x in xrange(self.num_seeds + 1):
             #Determine the seed
             seed = int(random.random() * self.width * self.height)
             self._grow_seed(seed % self.width, seed / self.width,
                     self.growth_threshold)
-
-        #Turn the map into a png
-        image.save(self.filename)
 
 
     def _grow_seed(self, seed_x, seed_y, growth_threshold):
@@ -62,17 +56,24 @@ class TerrainGenerator(object):
 
 class Terrain(object):
     
-    def __init__(self, defaultColour=(0, 128, 255)):
+    def __init__(self, width, height, defaultColour=(0, 128, 255)):
         self.data = {}
+        self.width = width
+        self.height = height
         self.defaultColour = defaultColour
 
     def __getitem__(self, index):
+        if index[0] < 0 or index[0] >= self.width or index[1] < 0 or index[1] >= self.height:
+            raise IndexError()
+
         if index in self.data:
             return self.data[index]
         else:
             return self.defaultColour
 
     def __setitem__(self, index, value):
+        if index[0] < 0 or index[0] >= self.width or index[1] < 0 or index[1] >= self.height:
+            raise IndexError()
         self.data[index] = value
 
     def get_data(self):
