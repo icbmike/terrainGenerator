@@ -1,1 +1,2 @@
 Pillow==2.1.0
+images2gif==1.0.1
