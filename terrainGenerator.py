@@ -62,11 +62,15 @@ class TerrainGenerator(object):
 
 class Terrain(object):
     
-    def __init__(self):
+    def __init__(self, defaultColour=(0, 128, 255)):
         self.data = {}
+        self.defaultColour = defaultColour
 
     def __getitem__(self, index):
-        return self.data[index]
+        if index in self.data:
+            return self.data[index]
+        else:
+            return self.defaultColour
 
     def __setitem__(self, index, value):
         self.data[index] = value
