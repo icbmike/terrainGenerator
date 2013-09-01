@@ -65,6 +65,12 @@ class Terrain(object):
     def __init__(self):
         self.data = []
 
+    def __getitem__(self, index):
+        pass
+
+    def __setitem__(self, index, value):
+        pass
+
 class Point
             
         
