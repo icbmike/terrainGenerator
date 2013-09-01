@@ -34,12 +34,17 @@ class TerrainGenerator(object):
 
 
     def _grow_seed(self, seed_x, seed_y, growth_threshold):
+        
         self.recursion_counter += 1
+        
         if random.random() > growth_threshold:
+        
             self.map[seed_x, seed_y] = (23, 115, 27)
             return
+        
         elif self.map[seed_x, seed_y] == (23, 115, 26):
             return
+        
         else:
             self.map[seed_x, seed_y] = (23, 115, 26)
             if seed_x != 0:
@@ -53,3 +58,13 @@ class TerrainGenerator(object):
 
             if seed_y != self.height - 1:
                 self._grow_seed(seed_x, seed_y + 1, growth_threshold - self.decay)
+
+
+class Terrain(object):
+    
+    def __init__(self):
+        self.data = []
+
+class Point
+            
+        
